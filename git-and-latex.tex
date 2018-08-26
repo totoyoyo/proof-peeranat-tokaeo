@@ -63,14 +63,16 @@
 \maketitle % This causes the title/author information above to be typeset neatly.
 
 \begin{lem}[Geometric series]
-	If $z$ is a real number and $\abs z$, then $$1+z+z^2+\cdots=\frac{1}{1-z}
+	If $z$ is a real number and $\abs z < 1$, then $$1+z+z^2+\cdots=\frac{1}{1-z}.$$
 \end{lem}
 
 \begin{proof}
 	% Enter the proof of the lemma here
 	For any positive integer $n$, let $S_n$ denote the partial sum, $$ S_n=1+z+z^2+\cdots+z^n.$$
-	Multiplying $S_n$ by $1-z$ yields $$(1-z)S_n=(1+z+\cdots+z^n) - (z+z^2+\cdots+z^{n+1}) = 1-z^{n+1}$$.
-	
+	Multiplying $S_n$ by $1-z$ yields $$(1-z)S_n=(1+z+\cdots+z^n) - (z+z^2+\cdots+z^{n+1}) = 1-z^{n+1}.$$
+	Therefore, $$S_n=\frac{1-z^{n+1}}{1-z}.$$
+	Since $\abs z <1$, we have $\lim_{n\to\infty} z^{n+1}=0$.
+	It follows that $$\lim_{n\to\infty} S_n = \frac{1}{1-z}.$$
 \end{proof}
 
 \end{document}
