@@ -53,7 +53,7 @@
 % ---The following code defines the title, author, and date of the document.
 \title{git~\&~\LaTeX{}}
 \date{\today}   % Using \today automatically updates to the document's build date
-\author{ENTER YOUR NAME HERE}
+\author{Peeranat (ToTo) Tokaeo}
 
 \begin{document}
 \maketitle
@@ -63,11 +63,14 @@
 \maketitle % This causes the title/author information above to be typeset neatly.
 
 \begin{lem}[Geometric series]
-	% Enter the statement of the lemma here
+	If $z$ is a real number and $\abs z$, then $$1+z+z^2+\cdots=\frac{1}{1-z}
 \end{lem}
 
 \begin{proof}
 	% Enter the proof of the lemma here
+	For any positive integer $n$, let $S_n$ denote the partial sum, $$ S_n=1+z+z^2+\cdots+z^n.$$
+	Multiplying $S_n$ by $1-z$ yields $$(1-z)S_n=(1+z+\cdots+z^n) - (z+z^2+\cdots+z^{n+1}) = 1-z^{n+1}$$.
+	
 \end{proof}
 
 \end{document}
