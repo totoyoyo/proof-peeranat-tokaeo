@@ -1,0 +1,48 @@
+%---------DO NOT EDIT THIS INDENTED SECTION
+	% Preamble
+	\documentclass[11pt,reqno,oneside,a4paper]{article}
+	\usepackage[a4paper,includeheadfoot,left=35mm,right=35mm,top=00mm,bottom=30mm,headheight=40mm]{geometry} %sets up the margins
+	\input{../texHead-Proof-Standard} % Use the standard texHead for this module. You should not edit this file.
+	\input{../texHead-Proof-Personal} % Use your personal additional macros. You may edit this file.
+	%---The following code defines the title, author, and date of the document.
+	\title{Practice proofs \#4}
+	\author{Anonymous}
+	\date{\today}   % Using \today automatically updates to the document's build date
+%----------------------------------
+%---------IF YOU WANT TO DEFINE YOUR OWN MACROS, YOU CAN DO SO EITHER IN ../texHead-Proof-Personal.tex OR FROM HERE ...
+
+%---------... TO HERE
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+%-----------EDIT FROM HERE
+
+\begin{abstract}
+	\input{PracticeProofsStandardAbstract.tex}
+	
+	I fitted the whole model solutions onto a little over 1 page.
+\end{abstract}
+
+We explicitly construct a bijection mapping from the unit interval to the whole real line.
+
+\begin{thm} \label{thm:BijectionRInterval}
+	Define $f : (0,1) \to \RR$ by
+	$$
+		f(x) =\frac{1}{1-x} - \frac{1}{x}.
+	$$
+	The function $f$ is a bijection.
+\end{thm}
+
+\begin{proof}
+	%--------------EDIT THIS PART--------------%
+	% Prove that $f$ is both a surjection and an injection.
+	% It will help to show that $f$ is strictly increasing.
+	% The intermediate value theorem is also important; if you have not seen it before, then look it up.
+	%------------------------------------------%
+\end{proof}
+
+\end{document}
+
+
+

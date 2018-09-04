@@ -1,0 +1,29 @@
+We argue that real multiplication, as defined through multiplication of rational Cauchy sequences, satisfies the corresponding five field axioms.
+
+\begin{lem} \label{lem:ExistsNonzeroCauchySequence}
+	Suppose that $x\in\RR\setminus\{0_\RR\}$.
+	Then there is a rational $M>0$ and a Cauchy sequence $(x_n)_{n\in\NN}$ such every term has $|x_n|>M$ and $(x_n)_{n\in\NN}$ belongs to the equivalence class $x$.
+\end{lem}
+
+\hintbox{
+	The idea is to argue that, for each rational $M>0$, there is a rational Cauchy sequence in $x$ for which at most finitely many terms are less than $M$.
+	Try contradiction.
+	Begin by assuming that $(a_n)_{n\in\NN}$ is a rational Cauchy sequence in $x$ for which infinitely many terms are $M$.
+	You should end up proving $x=0_\RR$ for the contradiction.
+
+	Now you know there is a rational Cauchy sequence in $x$ with at most finitely many ``problem'' terms that are less than $M$.
+	Fix each of the problem terms by changing them to something else.
+}
+
+\begin{thm} \label{thm:RealMultiplication}
+	Real multiplication, defined as the descent of multiplication of rational Cauchy sequences, obeys field axioms~\textup{(6)--(10)}.
+\end{thm}
+
+\hintbox{
+	Axioms~(6)--(9) essentially follow from the corresponding properties for rational numbers.
+	For each axiom, you will need to start with real numbers, define representative rational Cauchy sequences, combine your rational Cauchy sequences in the appropriate way, then map back to the real numbers.
+
+	For axiom~(10), the method is essentially the same, but when you produce your new rational Cauchy sequence $(y_n)_{n\in\NN}$ (which will represent the real multiplicative inverse of $(x_n)_{n\in\NN}$) it is not so simple to prove that it is actually Cauchy.
+	It might be easiest to start by structuring the proof as if you have a magical lemma that guarantees $(y_n)_{n\in\NN}$ is Cauchy.
+	After you have the main proof worked out, go back and fill in the ``$(y_n)_{n\in\NN}$ is Cauchy'' gap. When studying $|y_n-y_m|$, try multiplying and dividing by $|x_n||x_m|$. You will need to use lemma~\ref{lem:ExistsNonzeroCauchySequence}.
+}

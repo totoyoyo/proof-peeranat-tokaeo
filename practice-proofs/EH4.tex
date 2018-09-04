@@ -1,0 +1,20 @@
+We explicitly construct a bijection mapping from the unit interval to the whole real line.
+
+\begin{thm} \label{thm:BijectionRInterval}
+	Define $f : (0,1) \to \RR$ by
+	$$
+		f(x) =\frac{1}{1-x} - \frac{1}{x}.
+	$$
+	The function $f$ is a bijection.
+\end{thm}
+
+\hintbox{
+	If you can show that $f$ is strictly increasing, then that should give you injectivity.
+	
+	For surjectivity, you need to justify that, for every real number $y$, there is some $x\in(0,1)$ such that $f(x)=y$.
+	The idea is to consider, for large $M>0$, $f(1/M)$ and $f(1-1/M)$ show that these are large positive and negative numbers, respectively.
+	Then you can use the intermediate value theorem to conclude that because, for some $M$, $f(1/M)<y<f(1-1/M)$, the required $x$ must exist.
+}
+
+
+

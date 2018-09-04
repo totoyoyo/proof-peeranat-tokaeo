@@ -1,0 +1,21 @@
+Here we take for granted the set of integers, and all familiar properties of addition, subtraction, and multiplication of integers.
+We also take for granted the ``integral domain'' property of integers, which states that $xy = 0$ implies $x = 0$ or $y = 0$, for all integers $x,y$.
+Equivalently, if $x \neq 0$ and $y \neq 0$ then $xy \neq 0$.
+This implies the cancellation property: if $x,y,z \in \ZZ$, and $z \neq 0$, and $xz = yz$, then $x = y$.
+
+A \emph{fraction} will mean an ordered pair $(x,y) \in \ZZ^2$ such that $y \neq 0$. Let $F$ be the set of fractions. Consider the relation $\sim$ on $F$ given by the rule
+$$
+	(x,y) \sim (u,v) \text{ means that } xv = yu.
+$$
+The point of $\sim$ is that if two fractions obey $(x,y)\sim(u,v)$, then they are two expressions of the same rational number.
+For example, $(2,4)\sim(12,24)$, and they both correspond to the rational number that we are used to representing $\frac{1}{2}$.
+
+\begin{thm} \label{thm:EquivaentFractions}
+	The relation $\sim$ is an equivalence relation on the set $F$.
+\end{lem}
+
+\hintbox{
+	Direct proof that $\sim$ satisfies each of the three properties of an equivalence relation.
+	Reflexivity and Symmetry are direct proofs, no more than 2 lines each.
+	Transitivity requires a little more care, to avoid dividing by $0$.
+}

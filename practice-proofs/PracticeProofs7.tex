@@ -1,0 +1,53 @@
+%---------DO NOT EDIT THIS INDENTED SECTION
+	% Preamble
+	\documentclass[11pt,reqno,oneside,a4paper]{article}
+	\usepackage[a4paper,includeheadfoot,left=35mm,right=35mm,top=00mm,bottom=30mm,headheight=40mm]{geometry} %sets up the margins
+	\input{../texHead-Proof-Standard} % Use the standard texHead for this module. You should not edit this file.
+	\input{../texHead-Proof-Personal} % Use your personal additional macros. You may edit this file.
+	%---The following code defines the title, author, and date of the document.
+	\title{Practice proofs \#7}
+	\author{Anonymous}
+	\date{\today}   % Using \today automatically updates to the document's build date
+%----------------------------------
+%---------IF YOU WANT TO DEFINE YOUR OWN MACROS, YOU CAN DO SO EITHER IN ../texHead-Proof-Personal.tex OR FROM HERE ...
+
+%---------... TO HERE
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+%-----------EDIT FROM HERE
+
+\begin{abstract}
+	\input{PracticeProofsStandardAbstract.tex}
+	
+	I fitted the whole model solutions onto $4/3$ pages.
+\end{abstract}
+
+Here we take for granted the set of integers, and all familiar properties of addition, subtraction, and multiplication of integers.
+We also take for granted the ``integral domain'' property of integers, which states that $xy = 0$ implies $x = 0$ or $y = 0$, for all integers $x,y$.
+Equivalently, if $x \neq 0$ and $y \neq 0$ then $xy \neq 0$.
+This implies the cancellation property: if $x,y,z \in \ZZ$, and $z \neq 0$, and $xz = yz$, then $x = y$.
+
+A \emph{fraction} will mean an ordered pair $(x,y) \in \ZZ^2$ such that $y \neq 0$. Let $F$ be the set of fractions.
+Consider the relation $\sim$ on $F$ given by the rule
+$$
+	(x,y) \sim (u,v) \text{ means that } xv = yu.
+$$
+The point of $\sim$ is that if two fractions obey $(x,y)\sim(u,v)$, then they are two expressions of the same rational number.
+For example, $(2,4)\sim(12,24)$, and they both correspond to the rational number that we are used to representing $\frac{1}{2}$.
+
+\begin{thm} \label{thm:EquivaentFractions}
+	The relation $\sim$ is an equivalence relation on the set $F$.
+\end{thm}
+
+\begin{proof}
+	%--------------EDIT THIS PART--------------%
+	% Hint: Direct proof that $\sim$ satisfies each of the three properties of an equivalence relation.
+	%------------------------------------------%
+\end{proof}
+
+\end{document}
+
+
+

@@ -1,0 +1,73 @@
+%---------DO NOT EDIT THIS INDENTED SECTION
+	% Preamble
+	\documentclass[11pt,reqno,oneside,a4paper]{article}
+	\usepackage[a4paper,includeheadfoot,left=35mm,right=35mm,top=00mm,bottom=30mm,headheight=40mm]{geometry} %sets up the margins
+	\input{../texHead-Proof-Standard} % Use the standard texHead for this module. You should not edit this file.
+	\input{../texHead-Proof-Personal} % Use your personal additional macros. You may edit this file.
+	%---The following code defines the title, author, and date of the document.
+	\title{Practice proofs \#8}
+	\author{Anonymous}
+	\date{\today}   % Using \today automatically updates to the document's build date
+%----------------------------------
+%---------IF YOU WANT TO DEFINE YOUR OWN MACROS, YOU CAN DO SO EITHER IN ../texHead-Proof-Personal.tex OR FROM HERE ...
+
+%---------... TO HERE
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+%-----------EDIT FROM HERE
+
+\begin{abstract}
+	\input{PracticeProofsStandardAbstract.tex}
+	Also delete the (completed for you!)\ proof of proposition~\ref{prop:RationalCauchyClosedUnderProduct} before submitting.
+	
+	I fitted the whole model solutions onto $3/4$ of a page.
+\end{abstract}
+
+We aim to construct real numbers as equivalence classes of rational Cauchy sequences.
+We will eventually have to show that adding and multiplying real numbers produces real numbers (see the field axioms), so it would help to know that adding and multiplying the underlying objects, rational Cauchy sequences, produces more rational Cauchy sequences.
+
+\begin{prop} \label{prop:RationalCauchyClosedUnderSum}
+	Suppose that $(a_n)_{n\in\NN}$ and $(b_n)_{n\in\NN}$ are both rational Cauchy sequences.
+	Then $(a_n+b_n)_{n\in\NN}$ is also a rational Cauchy sequence.
+\end{prop}
+
+\begin{proof}
+	%--------------EDIT THIS PART--------------%
+	% Hint: In the definition of a Cauchy sequence, replace the symbol $\epsilon$ with the symbol $\delta$, and $N(\epsilon)$ with $N_a(\delta)$ for the first sequence and $N_b(\delta)$ for the second.
+	% Write down the statement you are trying to prove (i.e.\ the definition of a Cauchy sequence).
+	% Try using the triangle inequality and choosing $N$ in a clever way.
+	%------------------------------------------%
+\end{proof}
+
+\begin{prop} \label{prop:RationalCauchyClosedUnderProduct}
+	Suppose that $(a_n)_{n\in\NN}$ and $(b_n)_{n\in\NN}$ are both rational Cauchy sequences.
+	Then $(a_nb_n)_{n\in\NN}$ is also a rational Cauchy sequence.
+\end{prop}
+
+\begin{proof}
+	The rational numbers are closed under multiplication, so $(a_nb_n)_{n\in\NN}$ is a rational sequence.
+	
+	As both of the original sequences are Cauchy, they are both bounded.
+	So we can choose a positive rational number $M$ that is a common bound for both sequences, in the sense that, for all $n\in\NN$, $|a_n|,|b_n|<M$.
+	Let $\delta>0$.
+	Then there exist natural numbers $N_a(\delta),N_b(\delta)$ such that
+	\begin{align*}
+		&\mbox{if } m,n > N_a(\delta), \mbox{ then } |a_m-a_n|<\delta, \\
+		&\mbox{if } m,n > N_b(\delta), \mbox{ then } |b_m-b_n|<\delta.
+	\end{align*}
+	Suppose $\epsilon>0$, set $N=\max\{N_a(\epsilon/2M),N_b(\epsilon/2M)\}$, and suppose that $m,n>N$.
+	Then
+	\begin{align*}
+		|(a_mb_m) - (a_nb_n)| &= |(a_m-a_n)b_m + a_n(b_m-b_n)| \\
+		&\leq |a_m-a_n||b_m| + |a_n||b_m-b_n| \\
+		&< \frac{\epsilon}{2M}M + M\frac{\epsilon}{2M} = \epsilon.
+	\end{align*}
+	Therefore the sequence $(a_nb_n)_{n\in\NN}$ is Cauchy.
+\end{proof}
+
+\end{document}
+
+
+

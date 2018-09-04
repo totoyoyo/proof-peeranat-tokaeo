@@ -1,0 +1,14 @@
+We aim to construct real numbers as equivalence classes of rational Cauchy sequences.
+We will eventually have to show that adding and multiplying real numbers produces real numbers (see the field axioms), so it would help to know that adding and multiplying the underlying objects, rational Cauchy sequences, produces more rational Cauchy sequences.
+
+\begin{prop} \label{prop:RationalCauchyClosedUnderSum}
+	Suppose that $(a_n)_{n\in\NN}$ and $(b_n)_{n\in\NN}$ are both rational Cauchy sequences.
+	Then $(a_n+b_n)_{n\in\NN}$ is also a rational Cauchy sequence.
+\end{prop}
+
+\hintbox{
+	In the definition of a Cauchy sequence, replace the symbol $\epsilon$ with the symbol $\delta$, and $N(\epsilon)$ with $N_a(\delta)$ for the first sequence and $N_b(\delta)$ for the second, and write down these statements.
+	Write down the statement you are trying to prove (i.e.\ the definition of a Cauchy sequence).
+	Try using the triangle inequality on $|(a_m+b_m) - (a_n+b_n)|$ to bound it in terms of something you know about.
+	Now choose $N(\epsilon)$, with reference to $N_a$ and $N_b$, in such a way that you can ensure $|(a_m+b_m) - (a_n+b_n)|<\epsilon$.
+}
