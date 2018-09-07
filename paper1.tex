@@ -1,0 +1,211 @@
+%---------DO NOT EDIT THIS INDENTED SECTION
+	% Preamble
+	\documentclass[11pt,reqno,oneside,a4paper]{article}
+	\usepackage[a4paper,includeheadfoot,left=35mm,right=35mm,top=00mm,bottom=30mm,headheight=40mm]{geometry} %sets up the margins
+	\input{../texHead-Proof-Standard} % Use the standard texHead for this module. You should not edit this file.
+	\input{../texHead-Proof-Personal} % Use your personal additional macros. You may edit this file.
+	%---The following code defines the title, author, and date of the document.
+	\title{Paper 1}
+	\date{\today}   % Using \today automatically updates to the document's build date
+%----------------------------------
+%---------IF YOU WANT TO DEFINE YOUR OWN MACROS, YOU CAN DO SO EITHER IN ../texHead-Proof-Personal.tex OR FROM HERE ...
+
+%---------... TO HERE
+
+\author{PSEUDONYM} %%%%%%%% EDIT THIS LINE. This should be your pseudonym from practice proof 3. You can find it in the feedback for that assignment on Canvas. If you can't find it, then please email the instructor to ask.
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+%-----------EDIT FROM HERE
+
+\begin{abstract}
+	Complete the document to make it readable by an audience of your peers.
+	The source file contains some hints and ideas.
+	Before submitting, please delete the begin \& end abstract tags and everything between them.
+	Make sure you include your PSEUDONYM in the document.
+	To submit, compile the paper, and submit the PDF file through Canvas.
+
+	You may work with others when figuring out the proofs, but you should acknowledge your peer collaborators in a comment on the Canvas submission (do not acknowledge them in the document submitted).
+	You should also acknowledge any peer tutors, books, web pages or other sources you used in a Canvas comment.
+	There is no need to acknowledge the Proofs So Far, or other class materials, but you may like to refer to ``Proposition~1.9 of Proofs So Far'', etc.,\ if you are using theorems we already proved.
+	{\color{red}You may \emph{not} share \LaTeX{} source files.}
+
+	This is a challenging assignment!
+	You are encouraged to interact with other students, according to the rules above, when constructing your proofs.
+	It is OK to submit incomplete solutions, as partial credit is available, particularly for the most difficult proofs.
+	Some theorems contain multiple statements, and there is credit available for establishing each claim of the theorem.
+\end{abstract}
+
+\section{Mean-spirited} \label{sec:mean-spirited}
+
+\begin{thm} \label{thm:mean-spirited}
+	For all $a,b,c>0$,
+	$$
+		\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} \geq 3.
+	$$
+\end{thm}
+
+\begin{proof}[Invalid proof of theorem~\ref{thm:mean-spirited}]
+	Suppose (for a contradiction) that
+	$$
+		\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} < 3.
+	$$
+	Then this inequality must be true for the particular choice of $a=b=c=1>0$.
+	But
+	$$
+		\frac{1^2}{1\times1} + \frac{1^2}{1\times1} + \frac{1^2}{1\times1} = 1+1+1 = 3 \not< 3.
+	$$
+	This contradicts our assumption, so the theorem is true.
+\end{proof}
+
+\noindent\emph{Discussion}:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% THE ABOVE CLAIMED PROOF IS INCORRECT.
+% WRITE A FEW SENTENCES TO EXPLAIN THE ERROR.
+%
+% 1. Is the theorem true or false. If the theorem is false, can you disprove it?
+% 2. Whether or not the theorem is true, is the proof correct or incorrect? If there are any errors in the proof, point them out and, if possible, correct.
+% 3. Are there any parts of the proof that could be made more efficient?
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}[Correct proof of theorem~\ref{thm:mean-spirited}]
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% HINTS
+	%
+	% Use the AM-GM inequality.
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{proof}
+
+\section{Rationals can always be expressed as ratios as arbitrary powers{\dots}or can they?}
+
+\noindent\emph{The below claimed theorem and proof may or may not be correct.}
+
+\begin{thm} \label{thm:power-rational}
+	For each $m,n\in\NN$, and for every positive $x\in\QQ$, there exist $a,b\in\NN$ such that $x = a^m / b^n$.
+\end{thm}
+
+\begin{proof}
+	By definition, each positive rational can be expressed as $a^1/b^1$ for some choice of naturals $a,b$.
+	Suppose that $x\in\QQ$ is such that $x=a^m/b$ for some $m\in\NN$.
+	Then
+	$$
+		x = \frac{a^{m+1}}{ab} = \frac{(a)^{m+1}}{(ab)^1} = \frac{\alpha^{m+1}}{\beta},
+	$$
+	using $\alpha=a\in\NN$ and $\beta=ab\in\NN$.
+	Hence, by induction on $m$, for every $m\in\NN$, and for every positive $x\in\QQ$, there exist $a,b\in\NN$ such that $x = a^m / b$.
+	
+	Now suppose that $x\in\QQ$ is such that $x=a/b^n$ for some $n\in\NN$.
+	Then
+	$$
+		x = \frac{ab}{b^{n+1}} = \frac{(ab)^1}{(b)^{n+1}} = \frac{\alpha}{\beta^{n+1}},
+	$$
+	using $\alpha=ab\in\NN$ and $\beta=b\in\NN$.
+	Hence, by induction on $n$, for every $n\in\NN$, and for every positive $x\in\QQ$, there exist $a,b\in\NN$ such that $x = a / b^n$.
+	
+	It follows that for every $m,n\in\NN$, and for every positive $x\in\QQ$, there exist $a,b\in\NN$ such that $x = a^m / b^n$.
+\end{proof}
+
+\noindent\emph{Discussion}:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% DISCUSS THE ABOVE CLAIMED THEOREM AND PROOF.
+% YOU SHOULD WRITE TWO OR THREE PARAGRAPHS TO DISCUSS THE ISSUES BELOW.
+%
+% 1. Is the theorem true or false. If the theorem is false, can you disprove it?
+% 2. Whether or not the theorem is true, is the proof correct or incorrect? If there are any errors in the proof, point them out and, if possible, correct.
+% 3. Are there any parts of the proof that could be made more efficient?
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{An irrootional number}
+
+\begin{defn} \label{defn:rootional}
+	The \emph{rootionals} (or \emph{rootional numbers}) are the natural roots of rational numbers.
+	They are the answers to the question ``Of what should I multiply $n$ copies to get $x$?'', when $0<x\in\QQ$, and $n\in\NN$.
+	The \emph{set of rootionals} is denoted $\mathbb{P}$.
+	A real number which is not rootional is called \emph{irrootional}.
+\end{defn}
+
+\begin{lem} \label{lem:powers-of-1+sqrt2}
+	% THE SYMBOLS $\phi$ AND $\psi$ SHOULD NOT APPEAR ANYWHERE IN THE STATEMENT OF THE THEOREM OR THE PROOF WHEN YOU SUBMIT.
+	% REPLACE $\phi$ and $\psi$ WITH EXPLICIT FORMULAE.
+	The sequences $(a_n)_{n\in\NN}$, $(b_n)_{n\in\NN}$ given by
+	\begin{align*}
+		a_1 &= 1 & a_{n+1} &= \phi(a_n,b_n), & n &\in\NN, \\
+		b_1 &= 1 & b_{n+1} &= \psi(a_n,b_n), & n &\in\NN,
+	\end{align*}
+	satisfy both
+	$$
+		\left(1+\sqrt{2}\right)^n = a_n + b_n \sqrt{2} \qquad\mbox{and}\qquad a_n^2-2b_n^2 = (-1)^n,
+	$$
+	for all $n\in\NN$.
+\end{lem}
+
+\begin{proof}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% HINTS
+	%
+	% First you have to complete the statement of the lemma.
+	% This means that you have to replace both $\phi(a_n,b_n)$ and $\psi(a_n,b_n)$ with explicit formulae.
+	% There is no need to show how you worked out what should replace $\phi$ and $\psi$, just enter the replacements into the statement of the lemma and then give the proof as if you always had always known what $\phi$ and $\psi$ are.
+	% THE SYMBOLS $\phi$ AND $\psi$ SHOULD NOT APPEAR ANYWHERE IN THE STATEMENT OF THE LEMMA OR THE PROOF WHEN YOU SUBMIT.
+	%
+	% The proof is by induction.
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{proof}
+
+\begin{thm} \label{thm:irrootional-eg}
+	The number $1+\sqrt{2}$ is irrootional.
+\end{thm}
+
+\begin{proof}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% HINTS
+	%
+	% The proof can begin in a similar way to that in which the proof that $\sqrt{2}\notin\RR$ began.
+	% Informed by lemma~\ref{lem:powers-of-1+sqrt2}, try to get rid of all roots so that you have an equation of integers.
+	% Later it may help to make use of the some of the results related to the fundamental theorem of arithmetic.
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{proof}
+
+\section{$n$-ary representations of integers}
+
+\begin{defn} \label{defn:n-ary-sequence}
+	For any integer $n\geq2$, a sequence $(a_j)_{j\in\NN^0}$ is called \emph{$n$-ary} if
+	$$
+		\{a_j:j\in\NN\}\subset\{0,1,\ldots,n-1\}.
+	$$
+\end{defn}
+
+\begin{thm} \label{thm:n-ary-rep-int}
+	For each $x\in\NN^0$, and for each integer $n\geq2$, there exists an eventually zero $n$-ary sequence $(a_j)_{j\in\NN^0}$ such that
+	$$
+		x = \sum_{j=0}^\infty a_j n^j.
+	$$
+\end{thm}
+
+\begin{proof}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% HINTS
+	%
+	% Look for a similar theorem in the Proofs So Far.
+	% You will have to extend the argument a bit.
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{proof}
+
+\end{document}
+
+
+
