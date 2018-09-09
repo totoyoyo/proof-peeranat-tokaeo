@@ -91,6 +91,21 @@ Therefore, the proof is incorrect.
 	%
 	% Use the AM-GM inequality.
 	%
+	From the AM-GM inequality, we know
+	\begin{align*}
+		\frac{a+b+c}{3} \geq \sqrt[3]{abc}. 
+	\end{align*}
+	Because we know $abc$ is a positive number, $\sqrt[3]{abc}$ is also positive. So, we can perform the following,
+	\begin{align*}
+	\frac{(a+b+c)(\sqrt[3]{abc})^2}{3} &\geq abc \\
+	\frac{(a+b+c)}{(abc)^{\frac{1}{3}}} &\geq 3 \\
+	\frac{(a)^{\frac{2}{3}}}{(bc)^{\frac{1}{3}}} + \frac{(b)^{\frac{2}{3}}}{(ac)^{\frac{1}{3}}} + \frac{(c)^{\frac{2}{3}}}{(ab)^{\frac{1}{3}}}&\geq 3 \\
+	\sqrt[3]{\frac{a^2}{bc}}+\sqrt[3]{\frac{b^2}{ac}}+\sqrt[3]{\frac{c^2}{ab}}&\geq 3
+	\end{align*}
+	We know that all terms are positive in the above inequality, so,
+	$$ \frac{a^2}{bc} + \frac{b^2}{ac} + \frac{c^2}{ac} \geq \sqrt[3]{\frac{a^2}{bc}}+\sqrt[3]{\frac{b^2}{ac}}+\sqrt[3]{\frac{c^2}{ab}}\geq3.$$
+	This implies that 
+	$$ \frac{a^2}{bc} + \frac{b^2}{ac} + \frac{c^2}{ac} \geq 3 .$$
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{proof}
 
