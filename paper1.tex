@@ -186,6 +186,56 @@ Therefore, the proof is incorrect.
 	%
 	% The proof is by induction.
 	%
+	First, we want to show that the sequence satisfies the first equation,
+	$$\left(1+\sqrt{2}\right)^n = a_n + b_n \sqrt{2}.$$
+	When $n=1$ the equations holds,
+	\begin{align*}
+		\mbox{LHS} = \left(1+\sqrt{2}\right)^1=1+\sqrt{2}\\	
+		\mbox{RHS} = a_1+b_1\sqrt{2}=1+\sqrt{2}.
+	\end{align*}
+	So, $\mbox{LHS} = \mbox{RHS},$ and the equation holds for $n=1$.
+	Assume the equations holds for a particular natural number $n$.
+	Now, we want to show that the equation also holds for $n+1$.
+	From our assumption we know,
+	\begin{align*}
+		\left(1+\sqrt{2}\right)^n &= a_n + b_n \sqrt{2}\\
+		\left(1+\sqrt{2}\right)^n(1+\sqrt{2}) &= (a_n + b_n \sqrt{2})(1+\sqrt{2})\\
+		\left(1+\sqrt{2}\right)^{n+1}&= a_n + a_n\sqrt{2} + b_n\sqrt{2} +2b_n\\
+		\left(1+\sqrt{2}\right)^{n+1}&= (a_n+2b_n) + (a_n+b_n)\sqrt{2}\\
+		\left(1+\sqrt{2}\right)^{n+1} &= (a_{n+1}) + (b_{n+1})\sqrt{2}
+	\end{align*}
+	Hence, the equation holds for $n+1$ when it holds for $n$. 
+	By induction on $n$, the equation holds for all natural number $n$.
+	
+	Next, we will show that the following equation also holds for the described sequences:
+	$$a_n^2-2b_n^2 = (-1)^n.$$
+	When $n=1$,
+	\begin{align*}
+	\mbox{LHS} = a_1^2-2b_1^2=1-2=-1\\	
+	\mbox{RHS} = (-1)^1=-1{2}.
+	\end{align*}
+	So $\mbox{LHS} = \mbox{RHS},$ and the equation holds for $n=1.$
+	Now, assume that the equation holds for a particular natural number $n$.
+	We want to show that the equation must also hold for $n+1$.
+	Now, consider
+	\begin{align*}
+		a_{n+1}^2-2b_{n+1}^2 &= (a_n+2b_n)^2-2(b_n+a_n)^2\\
+		&= a_n^2 + 4b_na_n +4b^2_n - 2(b_n^2+2a_nb_n+a_n^2)\\
+		&= 2b_n^2-a^2_n\\
+		&= -1(a^2_n-2b_n^2).
+	\end{align*}
+	We know from our induction hypothesis that $a_n^2-2b_n^2 = (-1)^n$, so
+	\begin{align*}
+		a_{n+1}^2-2b_{n+1}^2 &= -1(-1)^n \\
+		a_{n+1}^2-2b_{n+1}^2 &= (-1)^{n+1}.
+	\end{align*}
+	Therefore, the equation holds for $n+1$, if it holds for a natural number $n$. By induction on $n$, the equation holds for all natural number $n$.
+	
+	So, it follows that  $(a_n)_{n\in\NN}$, $(b_n)_{n\in\NN}$ satisfy both 
+	$$
+	\left(1+\sqrt{2}\right)^n = a_n + b_n \sqrt{2} \qquad\mbox{and}\qquad a_n^2-2b_n^2 = (-1)^n,
+	$$
+	for all $n\in\NN$.
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{proof}
 
