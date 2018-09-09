@@ -2,8 +2,8 @@
 	% Preamble
 	\documentclass[11pt,reqno,oneside,a4paper]{article}
 	\usepackage[a4paper,includeheadfoot,left=35mm,right=35mm,top=00mm,bottom=30mm,headheight=40mm]{geometry} %sets up the margins
-	\input{../texHead-Proof-Standard} % Use the standard texHead for this module. You should not edit this file.
-	\input{../texHead-Proof-Personal} % Use your personal additional macros. You may edit this file.
+	\input{./texHead-Proof-Standard} % Use the standard texHead for this module. You should not edit this file.
+	\input{./texHead-Proof-Personal} % Use your personal additional macros. You may edit this file.
 	%---The following code defines the title, author, and date of the document.
 	\title{Paper 1}
 	\date{\today}   % Using \today automatically updates to the document's build date
@@ -12,7 +12,7 @@
 
 %---------... TO HERE
 
-\author{PSEUDONYM} %%%%%%%% EDIT THIS LINE. This should be your pseudonym from practice proof 3. You can find it in the feedback for that assignment on Canvas. If you can't find it, then please email the instructor to ask.
+\author{Turisas} %%%%%%%% EDIT THIS LINE. This should be your pseudonym from practice proof 3. You can find it in the feedback for that assignment on Canvas. If you can't find it, then please email the instructor to ask.
 
 \begin{document}
 \maketitle
@@ -57,7 +57,7 @@
 	$$
 		\frac{1^2}{1\times1} + \frac{1^2}{1\times1} + \frac{1^2}{1\times1} = 1+1+1 = 3 \not< 3.
 	$$
-	This contradicts our assumption, so the theorem is true.
+	This contradicts our assumption, so the theorem is true. 
 \end{proof}
 
 \noindent\emph{Discussion}:
@@ -70,6 +70,18 @@
 % 2. Whether or not the theorem is true, is the proof correct or incorrect? If there are any errors in the proof, point them out and, if possible, correct.
 % 3. Are there any parts of the proof that could be made more efficient?
 %
+The negation on the Theorem's statement is done incorrectly. 
+The statement is, $\forall a,b,c >0$, 
+$$
+	\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} \geq 3.
+$$ 
+The correct negation would then be: there $\exists a,b,c >0$ such that 
+$$
+	\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} < 3.
+$$
+The proof by contradiction above is done by giving one counterexample against the negation.
+However, this is not sufficient because you have to show that there are no possible $a,b,$ or $c >0$ that satisfies the property. 
+Therefore, the proof is incorrect.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{proof}[Correct proof of theorem~\ref{thm:mean-spirited}]
@@ -137,8 +149,8 @@
 	% REPLACE $\phi$ and $\psi$ WITH EXPLICIT FORMULAE.
 	The sequences $(a_n)_{n\in\NN}$, $(b_n)_{n\in\NN}$ given by
 	\begin{align*}
-		a_1 &= 1 & a_{n+1} &= \phi(a_n,b_n), & n &\in\NN, \\
-		b_1 &= 1 & b_{n+1} &= \psi(a_n,b_n), & n &\in\NN,
+		a_1 &= 1 & a_{n+1} &= a_n+2b_n, & n &\in\NN, \\
+		b_1 &= 1 & b_{n+1} &= a_n+b_n, & n &\in\NN,
 	\end{align*}
 	satisfy both
 	$$
