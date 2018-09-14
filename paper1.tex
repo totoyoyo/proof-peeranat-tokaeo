@@ -70,7 +70,8 @@
 % 2. Whether or not the theorem is true, is the proof correct or incorrect? If there are any errors in the proof, point them out and, if possible, correct.
 % 3. Are there any parts of the proof that could be made more efficient?
 %
-The negation on the Theorem's statement is done incorrectly. 
+Although the theorem is true, the proof is not adequate.
+The negation on the theorem's statement is done incorrectly. 
 The statement is, $\forall a,b,c >0$, 
 $$
 	\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} \geq 3.
@@ -80,7 +81,7 @@ $$
 	\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} < 3.
 $$
 The proof by contradiction above is done by giving one counterexample against the negation.
-However, this is not sufficient because you have to show that there are no possible $a,b,$ or $c >0$ that satisfies the property. 
+However, this is not sufficient because you have to show that do not exist $a,b,$ or $c >0$ that satisfies the property. 
 Therefore, the proof is incorrect.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -161,6 +162,17 @@ From the AM-GM inequality, we know
 % 2. Whether or not the theorem is true, is the proof correct or incorrect? If there are any errors in the proof, point them out and, if possible, correct.
 % 3. Are there any parts of the proof that could be made more efficient?
 %
+The theorem is false, because there is a counter example to the theorem. Take $x=2$, and $m=n=2$.
+Then if we assume that the theorem is true, we can write $$2=\left(\frac{a}{b}\right)^2.$$
+Because $a,b$ are positive, 
+	$$\sqrt{2}=\frac{a}{b}.$$
+However, this is impossible because $\dfrac{a}{b}$ is a rational number, but $\sqrt{2}$ is not.
+So the theorem is disproved with a counterexample.
+
+Secondly, the proof is incorrect because it only is able to prove .... 
+If we were to draw a diagram which illustrates the induction of the proof, it would look like this:
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{An irrootional number}
@@ -274,10 +286,10 @@ From the AM-GM inequality, we know
 		\sqrt{2} &= \frac{\frac{c}{d}-a_n}{b_n} \\
 		\sqrt{2} &= \frac{c-a_nd}{b_nd}
 	\end{align*}
-	We know from the definition of $a_n, b_n$ in Lemma 4 that they are both integers, because the terms in sequences $(a_n)_{n\in\NN}$, $(b_n)_{n\in\NN}$ are constructed simply by adding up previous integer terms, which are initialized at $1$, an integer. 
-	Since by assumption $c$ and $d$ are also integers, $\dfrac{c-a_nd}{b_nd}$ is just a fraction of two integers, which is rational. So the RHS is rational, but we know that $\sqrt{2}$, which is the LHS, is irrational. 
+	We know from the definition of $a_n, b_n$ in Lemma 4 that they are both integers, because the terms in sequences $(a_n)_{n\in\NN}$, $(b_n)_{n\in\NN}$ are constructed simply by adding up previous integer terms, which are initialized at $1$. 
+	Since by assumption $c$ and $d$ are also integers, $\dfrac{c-a_nd}{b_nd}$ is just a  quotient of two integers, which defines a rational number. So the RHS is rational, but we know that $\sqrt{2}$, which is the LHS, is irrational. 
 	
-	Therefore, there is a contradiction and $1+\sqrt{2}$ is irrootional
+	Therefore, there is a contradiction and $1+\sqrt{2}$ is irrootional.
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{proof}
 
@@ -306,6 +318,8 @@ From the AM-GM inequality, we know
 	% You will have to extend the argument a bit.
 	%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
 \end{proof}
 
 \end{document}
