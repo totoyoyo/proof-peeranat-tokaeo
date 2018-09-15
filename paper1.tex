@@ -163,15 +163,14 @@ From the AM-GM inequality, we know
 % 3. Are there any parts of the proof that could be made more efficient?
 %
 The theorem is false, because there is a counter example to the theorem. Take $x=2$, and $m=n=2$.
-Then if we assume that the theorem is true, we can write $$2=\left(\frac{a}{b}\right)^2.$$
+Then if we assume that the theorem is true, we can write, with naturals $a,b$ $$2=\left(\frac{a}{b}\right)^2.$$
 Because $a,b$ are positive, 
 	$$\sqrt{2}=\frac{a}{b}.$$
 However, this is impossible because $\dfrac{a}{b}$ is a rational number, but $\sqrt{2}$ is not.
-So the theorem is disproved with a counterexample.
+So there is a contradiction, and the theorem is disproved.
 
-Secondly, the proof is incorrect because it only is able to prove .... 
-If we were to draw a diagram which illustrates the induction of the proof, it would look like this:
-
+So, the proof does not prove the theorem, but it was able to prove, through induction, that $x=a^m/b$ works and $x=a/b^n$ works independently. 
+However, it does not follow that for every $m,n\in\NN$, and for every positive $x\in\QQ$, there exist $a,b\in\NN$ such that $x = a^m / b^n$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -317,6 +316,25 @@ If we were to draw a diagram which illustrates the induction of the proof, it wo
 	% Look for a similar theorem in the Proofs So Far.
 	% You will have to extend the argument a bit.
 	%
+	Let $P(x)$ be the statement of the theorem. $P(0)$ is trivially true because if we write, 
+	$$
+		0 = \sum_{j=0}^\infty a_j n^j,
+	$$
+	the certainly exists an $n$-ary sequence $(a_j)_{j\in\NN^0}$ that is just the infinite sequence with all 0s. This sequence would be $n$-ary for every $n$ because for the the smallest $n$, which is 2, $\{0\}\subset\{0,1\}$.
+	
+	Now, let $x$ be a natural number such that $x>0$, and suppose that $P(k)$ is true for all integer $k$ such that $0\leq k\leq x$. Now, we want to show that $P(x+1)$ is also true.
+	
+	If $x+1$ is divisible by $n$, then $\frac{x+1}{n}\in \NNzero$ and $0\leq\frac{x+1}{n}\leq x$. Since we know that $P(k)$ is true, we know that there exists an $n$-ary sequence such that 
+	$$
+		\frac{x+1}{n} = \sum_{j=0}^\infty a_{\frac{x+1}{n},j} n^j
+	$$
+	where $a_{\frac{x+1}{n},j}$ is the $j$th term in the sequence $a_{\frac{x+1}{n}}$
+	Manipulating this equation yields, 
+	\begin{align*}
+		x+1 &= \sum_{j=0}^\infty a_{\frac{x+1}{n},j} n^{j+1} \\
+		x+1 &= \sum_{j=1}^\infty a_{\frac{x+1}{n},j-1} n^{j}.
+	\end{align*}
+	Now let us define a new sequence $a_{x+1}$ such that $a_{x+1,j} = a_{\frac{x+1}{n},j-1}$
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	
