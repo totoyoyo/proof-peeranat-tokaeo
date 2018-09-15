@@ -20,24 +20,6 @@
 
 %-----------EDIT FROM HERE
 
-\begin{abstract}
-	Complete the document to make it readable by an audience of your peers.
-	The source file contains some hints and ideas.
-	Before submitting, please delete the begin \& end abstract tags and everything between them.
-	Make sure you include your PSEUDONYM in the document.
-	To submit, compile the paper, and submit the PDF file through Canvas.
-
-	You may work with others when figuring out the proofs, but you should acknowledge your peer collaborators in a comment on the Canvas submission (do not acknowledge them in the document submitted).
-	You should also acknowledge any peer tutors, books, web pages or other sources you used in a Canvas comment.
-	There is no need to acknowledge the Proofs So Far, or other class materials, but you may like to refer to ``Proposition~1.9 of Proofs So Far'', etc.,\ if you are using theorems we already proved.
-	{\color{red}You may \emph{not} share \LaTeX{} source files.}
-
-	This is a challenging assignment!
-	You are encouraged to interact with other students, according to the rules above, when constructing your proofs.
-	It is OK to submit incomplete solutions, as partial credit is available, particularly for the most difficult proofs.
-	Some theorems contain multiple statements, and there is credit available for establishing each claim of the theorem.
-\end{abstract}
-
 \section{Mean-spirited} \label{sec:mean-spirited}
 
 \begin{thm} \label{thm:mean-spirited}
@@ -86,7 +68,7 @@ Therefore, the proof is incorrect.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{proof}[Correct proof of theorem~\ref{thm:mean-spirited}]
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%22%%%%%%%%%%%%%%%%%%%%%%%
 	%
 	% HINTS
 	%
@@ -328,13 +310,37 @@ However, it does not follow that for every $m,n\in\NN$, and for every positive $
 	$$
 		\frac{x+1}{n} = \sum_{j=0}^\infty a_{\frac{x+1}{n},j} n^j
 	$$
-	where $a_{\frac{x+1}{n},j}$ is the $j$th term in the sequence $a_{\frac{x+1}{n}}$
+	where $a_{\frac{x+1}{n},j}$ is the $j$th term in the sequence $(a_{\frac{x+1}{n}})_{j\in\NN^0}$
 	Manipulating this equation yields, 
 	\begin{align*}
 		x+1 &= \sum_{j=0}^\infty a_{\frac{x+1}{n},j} n^{j+1} \\
 		x+1 &= \sum_{j=1}^\infty a_{\frac{x+1}{n},j-1} n^{j}.
 	\end{align*}
-	Now let us define a new sequence $a_{x+1}$ such that $a_{x+1,j} = a_{\frac{x+1}{n},j-1}$
+	Now, let us define a new sequence $(a_{x+1,j})_{j\in\NN^0}$ such that $a_{x+1,j} = a_{\frac{x+1}{n},j-1}$ for all $j\in \NN$ and $a_{x+1,0} = 0 $. We can then rewrite the previous equation as
+	\begin{align*}
+		x+1 &= 0+ \sum_{j=1}^\infty a_{x+1,j} n^{j} \\
+		x+1 &=  \sum_{j=0}^\infty a_{x+1,j} n^{j}.
+	\end{align*}
+	This new sequence is eventually zero because the original sequence $(a_{\frac{x+1}{n},j})_{j\in\NN^0}$ was eventually zero. 
+	This new sequence is also $n$-ary because $(a_{\frac{x+1}{n},j})_{j\in\NN^0}$ is $n$-ary and we only added another $0$. So we have shown that $P(x+1)$ is true if $x+1$ is divisible by $n$.
+	
+	Next, consider the case where $x+1$ is not divisible by $n$. 
+	Then, the quotient remainder theorem states that there exists an integer $r$, $1\leq r\leq n-1$ such that $\frac{x+1-r}{n} \in \NN$. 
+	So, we can write $0\leq\frac{x+1-r}{n}\leq x$. By our inductive hypothesis, we know
+	\begin{align*}
+		\frac{x+1-r}{n} &= \sum_{j=0}^\infty a_{\frac{x+1-r}{n},j} n^{j} \\
+		x+1-r &= \sum_{j=0}^\infty a_{\frac{x+1-r}{n},j} n^{j+1} \\
+		x+1 &= r + \sum_{j=1}^\infty a_{\frac{x+1-r}{n},j-1} n^{j}.
+	\end{align*}
+	Now, we can define a new sequence $(a_{x+1,j})_{j\in\NN^0}$ such that $a_{x+1,j} = a_{\frac{x+1-r}{n},j-1}$ for all $j\in \NN$ and $a_{x+1,0} = r $. We can then rewrite the previous equation as
+	\begin{align*}
+		x+1 &= r + \sum_{j=1}^\infty a_{x+1,j} n^{j}\\
+		x+1 &= \sum_{j=0}^\infty a_{x+1,j} n^{j}.
+	\end{align*}
+	This new sequence is eventually zero because the original sequence  $(a_{\frac{x+1-r}{n},j})_{j\in\NN^0}$ was eventually zero. This new sequence is also $n$-ary because  $(a_{\frac{x+1-r}{n},j})_{j\in\NN^0}$ is $n$-ary, and we added an additional term $r$ which is $1\leq r\leq n-1$. So we have shown that $P(x+1)$ is also true if $x+1$ is not divisible by $n$.
+	
+	Therefore $P(x+1)$ is true for all $n\geq2$. By complete induction on $x$, $P(x)$ is true, and the theorem is proved.
+	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	
