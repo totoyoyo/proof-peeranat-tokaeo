@@ -64,11 +64,11 @@ $$
 $$
 The proof by contradiction above is done by giving one counterexample against the negation.
 However, this is not sufficient because you have to show that do not exist $a,b,$ or $c >0$ that satisfies the property. 
-Therefore, the proof is incorrect.
+Therefore, the proof is incorrect. However, it was very efficient by showing a simple counterexample, albeit not enough to prove the theorem.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{proof}[Correct proof of theorem~\ref{thm:mean-spirited}]
-	%%%%%%%%%%22%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%
 	% HINTS
 	%
@@ -152,6 +152,7 @@ However, this is impossible because $\dfrac{a}{b}$ is a rational number, but $\s
 So there is a contradiction, and the theorem is disproved.
 
 So, the proof does not prove the theorem, but it was able to prove, through induction, that $x=a^m/b$ works and $x=a/b^n$ works independently. 
+The proof was very efficient in the induction portion by showing very clearly what the base case, the hypothesis, and the inductive step are without doing so too repetitively.
 However, it does not follow that for every $m,n\in\NN$, and for every positive $x\in\QQ$, there exist $a,b\in\NN$ such that $x = a^m / b^n$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -208,7 +209,7 @@ However, it does not follow that for every $m,n\in\NN$, and for every positive $
 		\left(1+\sqrt{2}\right)^n(1+\sqrt{2}) &= (a_n + b_n \sqrt{2})(1+\sqrt{2})\\
 		\left(1+\sqrt{2}\right)^{n+1}&= a_n + a_n\sqrt{2} + b_n\sqrt{2} +2b_n\\
 		\left(1+\sqrt{2}\right)^{n+1}&= (a_n+2b_n) + (a_n+b_n)\sqrt{2}\\
-		\left(1+\sqrt{2}\right)^{n+1} &= (a_{n+1}) + (b_{n+1})\sqrt{2}
+		\left(1+\sqrt{2}\right)^{n+1} &= (a_{n+1}) + (b_{n+1})\sqrt{2}.
 	\end{align*}
 	Hence, the equation holds for $n+1$ when it holds for $n$. 
 	By induction on $n$, the equation holds for all natural number $n$.
@@ -310,7 +311,7 @@ However, it does not follow that for every $m,n\in\NN$, and for every positive $
 	$$
 		\frac{x+1}{n} = \sum_{j=0}^\infty a_{\frac{x+1}{n},j} n^j
 	$$
-	where $a_{\frac{x+1}{n},j}$ is the $j$th term in the sequence $(a_{\frac{x+1}{n}})_{j\in\NN^0}$
+	where $a_{\frac{x+1}{n},j}$ is the $j$th term in the sequence $(a_{\frac{x+1}{n}})_{j\in\NN^0}.$
 	Manipulating this equation yields, 
 	\begin{align*}
 		x+1 &= \sum_{j=0}^\infty a_{\frac{x+1}{n},j} n^{j+1} \\
@@ -321,7 +322,7 @@ However, it does not follow that for every $m,n\in\NN$, and for every positive $
 		x+1 &= 0+ \sum_{j=1}^\infty a_{x+1,j} n^{j} \\
 		x+1 &=  \sum_{j=0}^\infty a_{x+1,j} n^{j}.
 	\end{align*}
-	This new sequence is eventually zero because the original sequence $(a_{\frac{x+1}{n},j})_{j\in\NN^0}$ was eventually zero. 
+	This new sequence is eventually zero because the original sequence $(a_{\frac{x+1}{n},j})_{j\in\NN^0}$ is eventually zero. 
 	This new sequence is also $n$-ary because $(a_{\frac{x+1}{n},j})_{j\in\NN^0}$ is $n$-ary and we only added another $0$. So we have shown that $P(x+1)$ is true if $x+1$ is divisible by $n$.
 	
 	Next, consider the case where $x+1$ is not divisible by $n$. 
@@ -337,9 +338,9 @@ However, it does not follow that for every $m,n\in\NN$, and for every positive $
 		x+1 &= r + \sum_{j=1}^\infty a_{x+1,j} n^{j}\\
 		x+1 &= \sum_{j=0}^\infty a_{x+1,j} n^{j}.
 	\end{align*}
-	This new sequence is eventually zero because the original sequence  $(a_{\frac{x+1-r}{n},j})_{j\in\NN^0}$ was eventually zero. This new sequence is also $n$-ary because  $(a_{\frac{x+1-r}{n},j})_{j\in\NN^0}$ is $n$-ary, and we added an additional term $r$ which is $1\leq r\leq n-1$. So we have shown that $P(x+1)$ is also true if $x+1$ is not divisible by $n$.
+	This new sequence is eventually zero because the original sequence  $(a_{\frac{x+1-r}{n},j})_{j\in\NN^0}$ is eventually zero. This new sequence is also $n$-ary because  $(a_{\frac{x+1-r}{n},j})_{j\in\NN^0}$ is $n$-ary, and we added an additional term $r$ which is $1\leq r\leq n-1$. So we have shown that $P(x+1)$ is also true if $x+1$ is not divisible by $n$.
 	
-	Therefore $P(x+1)$ is true for all $n\geq2$. By complete induction on $x$, $P(x)$ is true, and the theorem is proved.
+	Therefore $P(x+1)$ is true for all $n\geq2$ for both cases when $x+1$ is and is not divisible by $n$. By complete induction on $x$, $P(x)$ is true, and the theorem is proved.
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
