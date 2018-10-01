@@ -6,7 +6,7 @@
 	\input{../texHead-Proof-Personal} % Use your personal additional macros. You may edit this file.
 	%---The following code defines the title, author, and date of the document.
 	\title{Practice proofs \#4}
-	\author{Peeranat (ToTo) Tokaeo}
+	\author{Anonymous}
 	\date{\today}   % Using \today automatically updates to the document's build date
 %----------------------------------
 %---------IF YOU WANT TO DEFINE YOUR OWN MACROS, YOU CAN DO SO EITHER IN ../texHead-Proof-Personal.tex OR FROM HERE ...
@@ -44,7 +44,7 @@ We explicitly construct a bijection mapping from the unit interval to the whole 
 			\end{align*}
 	We know the last inequality because $b>a$, so $(b-a)>0$. So we can conclude that $f(b) >f(a)$ for all $a,b$ such that $0<a<b<1$. This means that the function $f$ is strictly increasing, so it will pass the horizontal line test. Hence, it is injective.
 	
-	To prove surjectivity, let $m$ be a large positive number such that $m>0$. Since $\frac{1}{m}$ and $1-\frac{1}{m}$ are both between 0 and 1, we can consider $f(\frac{1}{m})$ and $f(1-\frac{1}{m})$. So,
+	To prove surjectivity, let $m$ be positive number such that $m>0$. Since $\frac{1}{m}$ and $1-\frac{1}{m}$ are both between 0 and 1, we can consider $f(\frac{1}{m})$ and $f(1-\frac{1}{m})$. So,
 	\begin{align*}
 	f\left(\frac{1}{m}\right) &= \frac{1}{1-\frac{1}{m}} - \frac{1}		{\frac{1}{m}} \\
 	&= \frac{m}{m-1} - m, 
@@ -57,7 +57,7 @@ and also
 	From this, we know that 
 	$$\lim_{m\to\infty} f\left(\frac{1}{m}\right) = \lim_{m\to\infty} \left(\frac{m}{m-1} - m\right) = -\infty,$$ and
 	$$\lim_{m\to\infty} f\left(1-\frac{1}{m}\right) = \lim_{m\to\infty} \left(m - \frac{m}{m-1}\right) = \infty.$$
-	So for every real number $y$, there exists an $m$ such that $ f\left(\frac{1}{m}\right)<y<f\left(1-\frac{1}{m}\right)$, because the function extends from negative infinity to positive infinity. Because we know that this function $f$ is continuous, we then also know that every real number $y$ is in the range of $f$ by the intermediate value theorem. Hence, the range of $f$ is its codomain, so $f$ is surjective. 
+	So for every real number $y$, there exists an $m$ such that $ f\left(\frac{1}{m}\right)<y<f\left(1-\frac{1}{m}\right)$, because the function extends to negative infinity and to positive infinity. Because we know that this function $f$ is continuous, we then also know that every real number $y$ is in the range of $f$ by the intermediate value theorem. Hence, the range of $f$ is its codomain, so $f$ is surjective. 
 	Because $f$ is injective and surjective, it is bijective.
 	%------------------------------------------%
 \end{proof}
