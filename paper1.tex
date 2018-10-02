@@ -1,0 +1,353 @@
+%---------DO NOT EDIT THIS INDENTED SECTION
+	% Preamble
+	\documentclass[11pt,reqno,oneside,a4paper]{article}
+	\usepackage[a4paper,includeheadfoot,left=35mm,right=35mm,top=00mm,bottom=30mm,headheight=40mm]{geometry} %sets up the margins
+	\input{./texHead-Proof-Standard} % Use the standard texHead for this module. You should not edit this file.
+	\input{./texHead-Proof-Personal} % Use your personal additional macros. You may edit this file.
+	%---The following code defines the title, author, and date of the document.
+	\title{Paper 1}
+	\date{\today}   % Using \today automatically updates to the document's build date
+%----------------------------------
+%---------IF YOU WANT TO DEFINE YOUR OWN MACROS, YOU CAN DO SO EITHER IN ../texHead-Proof-Personal.tex OR FROM HERE ...
+
+%---------... TO HERE
+
+\author{Turisas} %%%%%%%% EDIT THIS LINE. This should be your pseudonym from practice proof 3. You can find it in the feedback for that assignment on Canvas. If you can't find it, then please email the instructor to ask.
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+%-----------EDIT FROM HERE
+
+\section{Mean-spirited} \label{sec:mean-spirited}
+
+\begin{thm} \label{thm:mean-spirited}
+	For all $a,b,c>0$,
+	$$
+		\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} \geq 3.
+	$$
+\end{thm}
+
+\begin{proof}[Invalid proof of theorem~\ref{thm:mean-spirited}]
+	Suppose (for a contradiction) that
+	$$
+		\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} < 3.
+	$$
+	Then this inequality must be true for the particular choice of $a=b=c=1>0$.
+	But
+	$$
+		\frac{1^2}{1\times1} + \frac{1^2}{1\times1} + \frac{1^2}{1\times1} = 1+1+1 = 3 \not< 3.
+	$$
+	This contradicts our assumption, so the theorem is true. 
+\end{proof}
+
+\noindent\emph{Discussion}:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% THE ABOVE CLAIMED PROOF IS INCORRECT.
+% WRITE A FEW SENTENCES TO EXPLAIN THE ERROR.
+%
+% 1. Is the theorem true or false. If the theorem is false, can you disprove it?
+% 2. Whether or not the theorem is true, is the proof correct or incorrect? If there are any errors in the proof, point them out and, if possible, correct.
+% 3. Are there any parts of the proof that could be made more efficient?
+%
+Although the theorem is true, the proof is not adequate.
+The negation on the theorem's statement is done incorrectly. 
+The statement is, $\forall a,b,c >0$, 
+$$
+	\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} \geq 3.
+$$ 
+The correct negation would then be: there $\exists a,b,c >0$ such that 
+$$
+	\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} < 3.
+$$
+The proof by contradiction above is done by giving one counterexample against the negation.
+However, this is not sufficient because you have to show that do not exist $a,b,$ or $c >0$ that satisfies the property. 
+Therefore, the proof is incorrect. However, it was very efficient by showing a simple counterexample, albeit not enough to prove the theorem.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}[Correct proof of theorem~\ref{thm:mean-spirited}]
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% HINTS
+	%
+	% Use the AM-GM inequality.
+	%
+	\begin{comment} %My initial longer solution
+		From the AM-GM inequality, we know
+		\begin{align*}
+		\frac{a+b+c}{3} \geq \sqrt[3]{abc}. 
+		\end{align*}
+		Because we know $abc$ is a positive number, $\sqrt[3]{abc}$ is also positive. So, we can perform the following,
+		\begin{align*}
+		\frac{(a+b+c)(\sqrt[3]{abc})^2}{3} &\geq abc \\
+		\frac{(a+b+c)}{(abc)^{\frac{1}{3}}} &\geq 3 \\
+		\frac{(a)^{\frac{2}{3}}}{(bc)^{\frac{1}{3}}} + \frac{(b)^{\frac{2}{3}}}{(ac)^{\frac{1}{3}}} + \frac{(c)^{\frac{2}{3}}}{(ab)^{\frac{1}{3}}}&\geq 3 \\
+		\sqrt[3]{\frac{a^2}{bc}}+\sqrt[3]{\frac{b^2}{ac}}+\sqrt[3]{\frac{c^2}{ab}}&\geq 3
+		\end{align*}
+		We know that all terms are positive in the above inequality, so,
+		$$ \frac{a^2}{bc} + \frac{b^2}{ac} + \frac{c^2}{ac} \geq \sqrt[3]{\frac{a^2}{bc}}+\sqrt[3]{\frac{b^2}{ac}}+\sqrt[3]{\frac{c^2}{ab}}\geq3.$$
+		This implies that 
+		$$ \frac{a^2}{bc} + \frac{b^2}{ac} + \frac{c^2}{ac} \geq 3 .$$
+	\end{comment}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+From the AM-GM inequality, we know
+	\begin{align*}
+		\frac{a^3+b^3+c^3}{3} &\geq \sqrt[3]{a^3b^3c^3} \\
+		{a^3+b^3+c^3} &\geq 3abc.
+	\end{align*}
+	Since we know that $a,b,c > 0$,
+	\begin{align*}
+		\frac{a^3+b^3+c^3}{abc} &\geq 3 \\
+		\frac{a^2}{bc} + \frac{b^2}{ca} + \frac{c^2}{ab} &\geq 3.
+	\end{align*}
+\end{proof}
+
+\section{Rationals can always be expressed as ratios as arbitrary powers{\dots}or can they?}
+
+\noindent\emph{The below claimed theorem and proof may or may not be correct.}
+
+\begin{thm} \label{thm:power-rational}
+	For each $m,n\in\NN$, and for every positive $x\in\QQ$, there exist $a,b\in\NN$ such that $x = a^m / b^n$.
+\end{thm}
+
+\begin{proof}
+	By definition, each positive rational can be expressed as $a^1/b^1$ for some choice of naturals $a,b$.
+	Suppose that $x\in\QQ$ is such that $x=a^m/b$ for some $m\in\NN$.
+	Then
+	$$
+		x = \frac{a^{m+1}}{ab} = \frac{(a)^{m+1}}{(ab)^1} = \frac{\alpha^{m+1}}{\beta},
+	$$
+	using $\alpha=a\in\NN$ and $\beta=ab\in\NN$.
+	Hence, by induction on $m$, for every $m\in\NN$, and for every positive $x\in\QQ$, there exist $a,b\in\NN$ such that $x = a^m / b$.
+	
+	Now suppose that $x\in\QQ$ is such that $x=a/b^n$ for some $n\in\NN$.
+	Then
+	$$
+		x = \frac{ab}{b^{n+1}} = \frac{(ab)^1}{(b)^{n+1}} = \frac{\alpha}{\beta^{n+1}},
+	$$
+	using $\alpha=ab\in\NN$ and $\beta=b\in\NN$.
+	Hence, by induction on $n$, for every $n\in\NN$, and for every positive $x\in\QQ$, there exist $a,b\in\NN$ such that $x = a / b^n$.
+	
+	It follows that for every $m,n\in\NN$, and for every positive $x\in\QQ$, there exist $a,b\in\NN$ such that $x = a^m / b^n$.
+\end{proof}
+
+\noindent\emph{Discussion}:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% DISCUSS THE ABOVE CLAIMED THEOREM AND PROOF.
+% YOU SHOULD WRITE TWO OR THREE PARAGRAPHS TO DISCUSS THE ISSUES BELOW.
+%
+% 1. Is the theorem true or false. If the theorem is false, can you disprove it?
+% 2. Whether or not the theorem is true, is the proof correct or incorrect? If there are any errors in the proof, point them out and, if possible, correct.
+% 3. Are there any parts of the proof that could be made more efficient?
+%
+The theorem is false, because there is a counter example to the theorem. Take $x=2$, and $m=n=2$.
+Then if we assume that the theorem is true, we can write, with naturals $a,b$ $$2=\left(\frac{a}{b}\right)^2.$$
+Because $a,b$ are positive, 
+	$$\sqrt{2}=\frac{a}{b}.$$
+However, this is impossible because $\dfrac{a}{b}$ is a rational number, but $\sqrt{2}$ is not.
+So there is a contradiction, and the theorem is disproved.
+
+So, the proof does not prove the theorem, but it was able to prove, through induction, that $x=a^m/b$ works and $x=a/b^n$ works independently. 
+The proof was very efficient in the induction portion by showing very clearly what the base case, the hypothesis, and the inductive step are without doing so too repetitively.
+However, it does not follow that for every $m,n\in\NN$, and for every positive $x\in\QQ$, there exist $a,b\in\NN$ such that $x = a^m / b^n$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{An irrootional number}
+
+\begin{defn} \label{defn:rootional}
+	The \emph{rootionals} (or \emph{rootional numbers}) are the natural roots of rational numbers.
+	They are the answers to the question ``Of what should I multiply $n$ copies to get $x$?'', when $0<x\in\QQ$, and $n\in\NN$.
+	The \emph{set of rootionals} is denoted $\mathbb{P}$.
+	A real number which is not rootional is called \emph{irrootional}.
+\end{defn}
+
+\begin{lem} \label{lem:powers-of-1+sqrt2}
+	% THE SYMBOLS $\phi$ AND $\psi$ SHOULD NOT APPEAR ANYWHERE IN THE STATEMENT OF THE THEOREM OR THE PROOF WHEN YOU SUBMIT.
+	% REPLACE $\phi$ and $\psi$ WITH EXPLICIT FORMULAE.
+	The sequences $(a_n)_{n\in\NN}$, $(b_n)_{n\in\NN}$ given by
+	\begin{align*}
+		a_1 &= 1 & a_{n+1} &= a_n+2b_n, & n &\in\NN, \\
+		b_1 &= 1 & b_{n+1} &= a_n+b_n, & n &\in\NN,
+	\end{align*}
+	satisfy both
+	$$
+		\left(1+\sqrt{2}\right)^n = a_n + b_n \sqrt{2} \qquad\mbox{and}\qquad a_n^2-2b_n^2 = (-1)^n,
+	$$
+	for all $n\in\NN$.
+\end{lem}
+
+\begin{proof}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% HINTS
+	%
+	% First you have to complete the statement of the lemma.
+	% This means that you have to replace both $\phi(a_n,b_n)$ and $\psi(a_n,b_n)$ with explicit formulae.
+	% There is no need to show how you worked out what should replace $\phi$ and $\psi$, just enter the replacements into the statement of the lemma and then give the proof as if you always had always known what $\phi$ and $\psi$ are.
+	% THE SYMBOLS $\phi$ AND $\psi$ SHOULD NOT APPEAR ANYWHERE IN THE STATEMENT OF THE LEMMA OR THE PROOF WHEN YOU SUBMIT.
+	%
+	% The proof is by induction.
+	%
+	First, we want to show that the sequence satisfies the first equation,
+	$$\left(1+\sqrt{2}\right)^n = a_n + b_n \sqrt{2}.$$
+	When $n=1$ the equations holds,
+	\begin{align*}
+		\mbox{LHS} = \left(1+\sqrt{2}\right)^1=1+\sqrt{2}\\	
+		\mbox{RHS} = a_1+b_1\sqrt{2}=1+\sqrt{2}.
+	\end{align*}
+	So, $\mbox{LHS} = \mbox{RHS},$ and the equation holds for $n=1$.
+	Assume the equations holds for a particular natural number $n$.
+	Now, we want to show that the equation also holds for $n+1$.
+	From our assumption we know,
+	\begin{align*}
+		\left(1+\sqrt{2}\right)^n &= a_n + b_n \sqrt{2}\\
+		\left(1+\sqrt{2}\right)^n(1+\sqrt{2}) &= (a_n + b_n \sqrt{2})(1+\sqrt{2})\\
+		\left(1+\sqrt{2}\right)^{n+1}&= a_n + a_n\sqrt{2} + b_n\sqrt{2} +2b_n\\
+		\left(1+\sqrt{2}\right)^{n+1}&= (a_n+2b_n) + (a_n+b_n)\sqrt{2}\\
+		\left(1+\sqrt{2}\right)^{n+1} &= (a_{n+1}) + (b_{n+1})\sqrt{2}.
+	\end{align*}
+	Hence, the equation holds for $n+1$ when it holds for $n$. 
+	By induction on $n$, the equation holds for all natural number $n$.
+	
+	Next, we will show that the following equation also holds for the described sequences:
+	$$a_n^2-2b_n^2 = (-1)^n.$$
+	When $n=1$,
+	\begin{align*}
+	\mbox{LHS} = a_1^2-2b_1^2=1-2=-1\\	
+	\mbox{RHS} = (-1)^1=-1.
+	\end{align*}
+	So $\mbox{LHS} = \mbox{RHS},$ and the equation holds for $n=1.$
+	Now, assume that the equation holds for a particular natural number $n$.
+	We want to show that the equation must also hold for $n+1$.
+	Now, consider
+	\begin{align*}
+		a_{n+1}^2-2b_{n+1}^2 &= (a_n+2b_n)^2-2(b_n+a_n)^2\\
+		&= a_n^2 + 4b_na_n +4b^2_n - 2(b_n^2+2a_nb_n+a_n^2)\\
+		&= 2b_n^2-a^2_n\\
+		&= -1(a^2_n-2b_n^2).
+	\end{align*}
+	We know from our induction hypothesis that $a_n^2-2b_n^2 = (-1)^n$, so
+	\begin{align*}
+		a_{n+1}^2-2b_{n+1}^2 &= -1(-1)^n \\
+		a_{n+1}^2-2b_{n+1}^2 &= (-1)^{n+1}.
+	\end{align*}
+	Therefore, the equation holds for $n+1$, if it holds for a natural number $n$. By induction on $n$, the equation holds for all natural number $n$.
+	
+	So, it follows that  $(a_n)_{n\in\NN}$, $(b_n)_{n\in\NN}$ satisfy both 
+	$$
+	\left(1+\sqrt{2}\right)^n = a_n + b_n \sqrt{2} \qquad\mbox{and}\qquad a_n^2-2b_n^2 = (-1)^n,
+	$$
+	for all $n\in\NN$.
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{proof}
+
+\begin{thm} \label{thm:irrootional-eg}
+	The number $1+\sqrt{2}$ is irrootional.
+\end{thm}
+
+\begin{proof}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% HINTS
+	%
+	 %The proof can begin in a similar way to that in which the proof that $\sqrt{2}\notin\RR$ began.
+	 %Informed by lemma~\ref{lem:powers-of-1+sqrt2}, try to get rid of all roots so that you have an equation of integers.
+	 %Later it may help to make use of the some of the results related to the fundamental theorem of arithmetic.
+	%
+	For a contradiction, let us assume that $1+\sqrt{2}$ is rootional. This means that there exists natural power of $1+\sqrt{2}$ that is equal to a rational number.  So, we can write
+	$$ \left(1+\sqrt{2}\right)^n = \frac{c}{d} $$
+	for natural number $n$ and integers $c,d$. From Lemma 4, we know that \\
+	$\left(1+\sqrt{2}\right)^n = a_n + b_n \sqrt{2}$, so substituting this into the earlier equation yields
+	\begin{align*}
+		a_n + b_n \sqrt{2} &= \frac{c}{d} \\
+		\sqrt{2} &= \frac{\frac{c}{d}-a_n}{b_n} \\
+		\sqrt{2} &= \frac{c-a_nd}{b_nd}
+	\end{align*}
+	We know from the definition of $a_n, b_n$ in Lemma 4 that they are both integers, because the terms in sequences $(a_n)_{n\in\NN}$, $(b_n)_{n\in\NN}$ are constructed simply by adding up previous integer terms, which are initialized at $1$. 
+	Since by assumption $c$ and $d$ are also integers, $\dfrac{c-a_nd}{b_nd}$ is just a  quotient of two integers, which defines a rational number. So the RHS is rational, but we know that $\sqrt{2}$, which is the LHS, is irrational. 
+	
+	Therefore, there is a contradiction and $1+\sqrt{2}$ is irrootional.
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{proof}
+
+\section{$n$-ary representations of integers}
+
+\begin{defn} \label{defn:n-ary-sequence}
+	For any integer $n\geq2$, a sequence $(a_j)_{j\in\NN^0}$ is called \emph{$n$-ary} if
+	$$
+		\{a_j:j\in\NN\}\subset\{0,1,\ldots,n-1\}.
+	$$
+\end{defn}
+
+\begin{thm} \label{thm:n-ary-rep-int}
+	For each $x\in\NN^0$, and for each integer $n\geq2$, there exists an eventually zero $n$-ary sequence $(a_j)_{j\in\NN^0}$ such that
+	$$
+		x = \sum_{j=0}^\infty a_j n^j.
+	$$
+\end{thm}
+
+\begin{proof}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% HINTS
+	%
+	% Look for a similar theorem in the Proofs So Far.
+	% You will have to extend the argument a bit.
+	%
+	Let $P(x)$ be the statement of the theorem. $P(0)$ is trivially true because if we write, 
+	$$
+		0 = \sum_{j=0}^\infty a_j n^j,
+	$$
+	the certainly exists an $n$-ary sequence $(a_j)_{j\in\NN^0}$ that is just the infinite sequence with all 0s. This sequence would be $n$-ary for every $n$ because for the the smallest $n$, which is 2, $\{0\}\subset\{0,1\}$.
+	
+	Now, let $x$ be a natural number such that $x>0$, and suppose that $P(k)$ is true for all integer $k$ such that $0\leq k\leq x$. Now, we want to show that $P(x+1)$ is also true.
+	
+	If $x+1$ is divisible by $n$, then $\frac{x+1}{n}\in \NNzero$ and $0\leq\frac{x+1}{n}\leq x$. Since we know that $P(k)$ is true, we know that there exists an $n$-ary sequence such that 
+	$$
+		\frac{x+1}{n} = \sum_{j=0}^\infty a_{\frac{x+1}{n},j} n^j
+	$$
+	where $a_{\frac{x+1}{n},j}$ is the $j$th term in the sequence $(a_{\frac{x+1}{n}})_{j\in\NN^0}.$
+	Manipulating this equation yields, 
+	\begin{align*}
+		x+1 &= \sum_{j=0}^\infty a_{\frac{x+1}{n},j} n^{j+1} \\
+		x+1 &= \sum_{j=1}^\infty a_{\frac{x+1}{n},j-1} n^{j}.
+	\end{align*}
+	Now, let us define a new sequence $(a_{x+1,j})_{j\in\NN^0}$ such that $a_{x+1,j} = a_{\frac{x+1}{n},j-1}$ for all $j\in \NN$ and $a_{x+1,0} = 0 $. We can then rewrite the previous equation as
+	\begin{align*}
+		x+1 &= 0+ \sum_{j=1}^\infty a_{x+1,j} n^{j} \\
+		x+1 &=  \sum_{j=0}^\infty a_{x+1,j} n^{j}.
+	\end{align*}
+	This new sequence is eventually zero because the original sequence $(a_{\frac{x+1}{n},j})_{j\in\NN^0}$ is eventually zero. 
+	This new sequence is also $n$-ary because $(a_{\frac{x+1}{n},j})_{j\in\NN^0}$ is $n$-ary and we only added another $0$. So we have shown that $P(x+1)$ is true if $x+1$ is divisible by $n$.
+	
+	Next, consider the case where $x+1$ is not divisible by $n$. 
+	Then, the quotient remainder theorem states that there exists an integer $r$, $1\leq r\leq n-1$ such that $\frac{x+1-r}{n} \in \NN$. 
+	So, we can write $0\leq\frac{x+1-r}{n}\leq x$. By our inductive hypothesis, we know
+	\begin{align*}
+		\frac{x+1-r}{n} &= \sum_{j=0}^\infty a_{\frac{x+1-r}{n},j} n^{j} \\
+		x+1-r &= \sum_{j=0}^\infty a_{\frac{x+1-r}{n},j} n^{j+1} \\
+		x+1 &= r + \sum_{j=1}^\infty a_{\frac{x+1-r}{n},j-1} n^{j}.
+	\end{align*}
+	Now, we can define a new sequence $(a_{x+1,j})_{j\in\NN^0}$ such that $a_{x+1,j} = a_{\frac{x+1-r}{n},j-1}$ for all $j\in \NN$ and $a_{x+1,0} = r $. We can then rewrite the previous equation as
+	\begin{align*}
+		x+1 &= r + \sum_{j=1}^\infty a_{x+1,j} n^{j}\\
+		x+1 &= \sum_{j=0}^\infty a_{x+1,j} n^{j}.
+	\end{align*}
+	This new sequence is eventually zero because the original sequence  $(a_{\frac{x+1-r}{n},j})_{j\in\NN^0}$ is eventually zero. This new sequence is also $n$-ary because  $(a_{\frac{x+1-r}{n},j})_{j\in\NN^0}$ is $n$-ary, and we added an additional term $r$ which is $1\leq r\leq n-1$. So we have shown that $P(x+1)$ is also true if $x+1$ is not divisible by $n$.
+	
+	Therefore $P(x+1)$ is true for all $n\geq2$ for both cases when $x+1$ is and is not divisible by $n$. By complete induction on $x$, $P(x)$ is true, and the theorem is proved.
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
+\end{proof}
+
+\end{document}
+
+
+
