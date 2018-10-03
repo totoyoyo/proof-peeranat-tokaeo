@@ -1,4 +1,18 @@
-\subsection*{Cardinality and subsets}
+\begin{prop} \label{prop:PowerSetsPreserveEquinumerosity}
+	Suppose $\# X=\# Y$.
+	Then $\# \power(X)=\# \power(Y)$.
+	Moreover, if $\# X\leq\# Y$, then $\# \power(X)\leq\# \power(Y)$.
+\end{prop}
+
+\hintbox{
+	There must be a bijection $f:X\to Y$.
+	Pick an arbitrary $S\subset X$.
+	Think about the process of taking the image of $S$ in $f$.
+	Is that a function of $S$?
+	Showing injectivity / surjectivity requires you to exploit injectivity / surjectivity of $f$.
+	
+	It is probably more efficient to prove the second part of the proposition first.
+}
 
 \begin{prop} \label{prop:SubsetCardinality}
 	If $X\subset Y$, then $\# X\leq \# Y$.
@@ -10,59 +24,11 @@
 	What happens if you expand the codomain back to $Y$?
 }
 
-\subsection*{Countable unions of sets}
-
-We study the cardinality of ordinary and disjoint unions of countable sets.
-
-\begin{lem} \label{lem:CountableUnions1}
-	If $\#A=\#B=\aleph_0$, then $\#(A\times B)=\aleph_0$.
-\end{lem}
+\begin{cor} \label{cor:IntersectionCardinality}
+	$\# (X\cap Y) \leq \# X$.
+\end{cor}
 
 \hintbox{
-	Stitch together some bijections that must exist, to produce a useful bijection.
-}
-
-\begin{prop} \label{prop:CountableUnions2}
-	If, for each $j\in J$, $A_j$ is a nonempty set with cardinality $\#A_j\leq\aleph_0$, and $\#J=\aleph_0$, then
-	$$
-		\# \bigsqcup_{j\in J} A_j = \aleph_0.
-	$$
-\end{prop}
-
-\hintbox{
-	Start by recalling the definition of disjoint union.
-	Find separately an injection and a surjection to the disjoint union of interest, and use the CSB theorem.
-
-	Can you find a surjection from $\NN\times J$ to the disjoint union?
-
-	Note that we asked for all $A_j$ to be nonempty.
-	What would happen if all (or all but finitely many) $A_j$ were $\emptyset$?
-	This offers a clue to how an injection might be constructed.
-}
-
-\begin{prop} \label{prop:CountableUnions3}
-	If, for each $j\in J$, $\#A_j\leq\aleph_0$, and $\#J=\aleph_0$, then
-	$$
-		\# \bigcup_{j\in J} A_j \leq \aleph_0.
-	$$
-\end{prop}
-
-\hintbox{
-	Direct construction of a surjection from the disjoint union of the previous proposition to this ordinary union.
-}
-
-\subsection*{Cardinality and power sets}
-
-We say that two sets are \emph{equinumerous} if they have the same cardinality. The following proposition says that the operation ``take the power set'' preserves equinumerosity.
-
-\begin{prop} \label{prop:PowerSetsPreserveEquinumerosity}
-	Suppose $\# X=\# Y$. Then $\# \power(X)=\# \power(Y)$. Moreover, if $\# X\leq\# Y$, then $\# \power(X)\leq\# \power(Y)$.
-\end{prop}
-
-\hintbox{
-	There must be a bijection $f:X\to Y$. Pick an arbitrary $S\subset X$.
-	Think about the process of taking the image of $S$ in $f$.
-	Is that a function of $S$? Showing injectivity / surjectivity requires you to exploit injectivity / surjectivity of $f$.
-
-	It is probably more efficient to prove the second part first.
+	Use proposition~\ref{prop:SubsetCardinality}.
+	How do subsets relate to intersections?
 }
