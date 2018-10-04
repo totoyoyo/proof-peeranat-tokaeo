@@ -18,12 +18,6 @@
 
 %-----------EDIT FROM HERE
 
-\begin{abstract}
-	\input{PracticeProofsStandardAbstract.tex}
-	
-	I fitted the whole model solutions onto $1.5$ pages.
-\end{abstract}
-
 We study how cardinality interacts with subsets and power sets.
 
 Recall that we say that two sets are equinumerous if they have the same cardinality.
@@ -41,6 +35,26 @@ The following proposition says that the operation ``take the power set'' preserv
 	% Pick an arbitrary $S\subset X$.
 	% Think about the process of taking the image of $S$ in $f$.
 	% Is that a function of $S$?
+	If $\# X=\# Y$, then there exists a bijection $f:X\to Y$.	
+	Let us define a function $g: \power(X) \to \power(Y)$ by $g(S) = \{f(x): x \in S\}$.
+	Suppose $S, T \subset X$ such that $S \neq T$. 
+	If $g(S)=g(T)$, then $\forall x\in S$, $f(x) \in g(S)$. 
+	But $g(S)=g(T)$, so $f(x) \in g(T)$ also. 
+	This implies that $\forall x\in S$, $\exists y\in T$ such that $f(x)=f(y)$. If we know that $f$ is injective, then $x=y$. This means that $\forall x\in S,$  $x\in T \implies S \subset T$.
+	
+	To show that $T \subset S$, we make the same assumptions. If $g(T)=g(S)$, then $\forall x\in T$, $f(x) \in g(T)$. 
+	But $g(T)=g(S)$ so $f(x), \in g(S)$ also. 
+	This implies that $\forall x\in T$, $\exists y\in S$ such that $f(x)=f(y)$. If we know that $f$ is injective, then $x=y$. This means that $\forall x\in T,$  $x\in S \implies T \subset S$.
+	
+	So we have shown that, given that $f$ is injective, $g(S)=g(T)$ implies $S=T$, which means that $g$ is an injection. So, the second part of the theorem is proved.
+	
+	To show that $g$ is also surjective and hence a bijection, let $T$ be an arbitrary element of $\power(Y)$, that is $T \subset Y$. To show surjectivity, we just need to find $S \in \power(X)$ such that $g(S)=T$. Let us define $S=\{f^{-1}(y):y\in T\}$. The existence of $f^{-1}: Y \to X$ is guaranteed because we know that $f$ is a bijection. Applying $g$ to this defined $S$ yields,
+	\begin{align*}
+		g(S) &= \{f(f^{-1}(y)):y\in T\}\\
+		&= \{y:y\in T\} \\
+		&= T
+	\end{align*}
+	So $g$ is surjective and injective, and therefore $\# \power(X)=\# \power(Y)$.
 	%------------------------------------------%
 \end{proof}
 
@@ -50,6 +64,9 @@ The following proposition says that the operation ``take the power set'' preserv
 
 \begin{proof}
 	%--------------EDIT THIS PART--------------%
+	Suppose $X\subset Y$ and $x \in X$. Let us define a function $f: X\to Y$ in the following way: $f(x) = x$. Since each $x$ is in $X$, each $x$ is also in $Y$.
+	
+	To show that $f$ is injective, suppose there exists $x_1,x_2 \in X$ such that $x_1 \neq x_2$. If $f(x_1) = f(x_2)$, then $x_1=f(x_1) = f(x_2)=x_2$, which is a contradiction to our assumption. Hence, $f(x_1) = f(x_2) \implies x_1 = x_2$ and $f$ is injective. So, by definition of injectivity, $\# X\leq \# Y$.
 	% Hint: Directly construct an injection.
 	%------------------------------------------%
 \end{proof}
@@ -61,6 +78,7 @@ The following proposition says that the operation ``take the power set'' preserv
 \begin{proof}
 	%--------------EDIT THIS PART--------------%
 	% Hint: Use proposition~\ref{prop:SubsetCardinality}.
+	Because $(X\cap Y)$ is a subset of $X$, Proposition 2 tells us that $\# (X\cap Y) \leq \# X$.
 	%------------------------------------------%
 \end{proof}
 
