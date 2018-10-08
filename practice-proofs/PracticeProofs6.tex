@@ -18,12 +18,6 @@
 
 %-----------EDIT FROM HERE
 
-\begin{abstract}
-	\input{PracticeProofsStandardAbstract.tex}
-	
-	I fitted the whole model solutions onto 1 page.
-\end{abstract}
-
 We study the cardinality of ordinary and disjoint unions of countable sets.
 
 \begin{lem} \label{lem:CardinalityUnions1}
@@ -33,6 +27,7 @@ We study the cardinality of ordinary and disjoint unions of countable sets.
 \begin{proof}
 	%--------------EDIT THIS PART--------------%
 	% Hint: Direct proof.
+	We know that $\#A=\#B=\aleph_0=\#\NN$. So $\#(A\times B) = \#A \times \#B = \#\NN \times \#\NN = \#(\NN \times \NN) = \aleph_0$. Hence, $\#(A\times B)=\aleph_0$.
 	%------------------------------------------%
 \end{proof}
 
@@ -47,6 +42,14 @@ We study the cardinality of ordinary and disjoint unions of countable sets.
 	%--------------EDIT THIS PART--------------%
 	% Hint: Start by recalling the definition of disjoint union.
 	% Find separately an injection and a surjection to the disjoint union of interest, and use the CSB theorem.
+	To show that an injection exists, consider the set $J$. We can easily construct an injection $J \to \bigsqcup_{j\in J} A_j$ where each element in $J$ is mapped to one element in $\bigsqcup_{j\in J} A_j$ that has the second term equal to that $J$. 
+	It is guaranteed that at least one such element exists because $A_j$ is a nonempty set for all $j$. Because $\aleph_0 = \#J \leq \# \bigsqcup_{j\in J} A_j$, we know $\aleph_0 \leq \# \bigsqcup_{j\in J} A_j$.
+
+	Now to show that there is a surjection from the naturals to $\bigsqcup_{j\in J} A_j$, consider the set $\NN \times J$. 
+	We can map each element of $\NN \times J$ to $\bigsqcup_{j\in J} A_j$ that shares the same second element. 
+	For every specific $j \in J$, there are more or equal number of elements that has $j$ as its second term in $\NN \times J$ than in $\bigsqcup_{j\in J} A_j$, because $\aleph_0\geq\#A_j$. Therefore, there certainly exists a surjection from $\NN \times J$ to $\bigsqcup_{j\in J} A_j$. This means that $\aleph_0 = \# \NN \times J \geq \# \bigsqcup_{j\in J} A_j$ and also from injection that $\aleph_0 \leq \# \bigsqcup_{j\in J} A_j$.
+	
+	So, $\# \bigsqcup_{j\in J} A_j = \aleph_0$.
 	%------------------------------------------%
 \end{proof}
 
@@ -60,6 +63,10 @@ We study the cardinality of ordinary and disjoint unions of countable sets.
 \begin{proof}
 	%--------------EDIT THIS PART--------------%
 	% Hint: Direct construction.
+	Consider the disjoint union $\bigsqcup_{j\in J} A_j$. We can define a function $f: \bigsqcup_{j\in J} A_j \to \bigcup_{j\in J} A_j$ such that $f(a,j) = a$ where $a \in \bigcup_{j\in J} A_j$. 
+	This function is clearly surjective because every element in the union is also an element in the disjoint union, if we remove the second index term. So, we have defined $f$ to essentially remove the second index term of each element of $\bigsqcup_{j\in J} A_j$. 
+	
+	So, $\aleph_0 = \#\bigsqcup_{j\in J} A_j \geq \# \bigcup_{j\in J} A_j$, which implies $\# \bigcup_{j\in J} A_j \leq \aleph_0$.
 	%------------------------------------------%
 \end{proof}
 
